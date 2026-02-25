@@ -33,8 +33,8 @@
   "author": "headmandev",
   "license": "MIT",
   "peerDependencies": {
-    "react": ">=18.0.0",
-    "react-dom": ">=18.0.0"
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "dependencies": {
     "body-scroll-lock": "^4.0.0-beta.0"
