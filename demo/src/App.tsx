@@ -1,22 +1,9 @@
 import { Options } from './components/Options';
 import { PropertyDocumentation } from './components/PropertyDocumentation';
-import { CodeBlock } from './components/CodeBlock';
 
-const installCode = `// main.tsx
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import 'react-side-panel/dist/styles.css';
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);`;
-
-export default function App() {
+  export default function App() {
   return (
-    <section className="hero">
+    <section className="hero is-danger is-fullheight theme-light">
       <header className="hero-head">
         <nav className="navbar">
           <div className="navbar-inner">
@@ -34,21 +21,18 @@ export default function App() {
       <div className="hero-body">
         <div className="container">
           <div className="columns">
-            <div className="column-left">
-              <div className="fixed-block">
-                <h1 className="hero-title">React Side Panel</h1>
-                <p className="hero-subtitle">
-                  Easy to use and flexible
+            <div className="column">
+              <div className="fixed">
+                <h1 className="title mb-2">REACT-SIDE-PANEL</h1>
+                <p className="subtitle">
+                🔥 Easy to use and flexible
                   <br />
                   screen-side modal component
                 </p>
-                <code className="install-cmd">npm i react-side-panel</code>
-                <div className="editor-wrap">
-                  <CodeBlock code={installCode} />
-                </div>
+                <code className="language-html p-2">npm i react-side-panel</code>
               </div>
             </div>
-            <div className="column-right">
+            <div className="column is-three-quarters">
               <Options />
               <PropertyDocumentation />
               <p className="github-link">

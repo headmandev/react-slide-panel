@@ -3,8 +3,16 @@ export function PropertyDocumentation() {
     <>
       <h3 className="section-heading doc-title">Documentation</h3>
       <h4 className="doc-subtitle">Properties</h4>
-      <div className="table-wrap">
-        <table className="doc-table">
+      <div className="table-container">
+        <table className="table is-bordered is-striped is-narrow is-fullwidth">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
           <tbody>
             <tr>
               <th>idName</th>
@@ -21,9 +29,9 @@ export function PropertyDocumentation() {
             <tr>
               <th>rerender</th>
               <td>boolean</td>
-              <td>default: <b>false</b></td>
+              <td>default: <b>true</b></td>
               <td>
-                By default the panel is mounted once and open/onOpenChange only show/hide it. Set to true to unmount when closed and remount when opened.
+                When true, unmount panel when closed and remount when opened. When false, panel stays mounted and is only shown/hidden.
               </td>
             </tr>
             <tr>
@@ -42,7 +50,7 @@ export function PropertyDocumentation() {
               <th>zIndex</th>
               <td>number | &apos;auto&apos;</td>
               <td>default: <b>&apos;auto&apos;</b></td>
-              <td>z-index of overlay and panel. &apos;auto&apos; uses the max z-index on the page.</td>
+              <td>z-index of overlay and panel. &apos;auto&apos; uses a high default.</td>
             </tr>
             <tr>
               <th>width</th>
@@ -66,14 +74,14 @@ export function PropertyDocumentation() {
               <th>lockScrollHtml</th>
               <td>boolean</td>
               <td>default: <b>true</b></td>
-              <td>When lockScroll is true, also set overflow hidden on html (helps with frameworks that set overflow on html).</td>
+              <td>When lockScroll is true, also set overflow hidden on html.</td>
             </tr>
             <tr>
               <th>transitionName</th>
               <td>string | undefined</td>
               <td>default: <b>undefined</b></td>
               <td>
-                slide-right | slide-left | slide-top | slide-bottom. Default (undefined) picks based on side. You can pass a custom class name and define .your-name-enter-active and .your-name-leave-active in CSS.
+                slide-right | slide-left | slide-top | slide-bottom. Default picks based on side. Or pass a custom class and define .your-name-enter-active and .your-name-leave-active in CSS.
               </td>
             </tr>
             <tr>
@@ -128,22 +136,24 @@ export function PropertyDocumentation() {
         </table>
       </div>
       <h4 className="doc-subtitle">Events / Callbacks</h4>
-      <table className="doc-table">
-        <tbody>
-          <tr>
-            <th>onOpened</th>
-            <td colSpan={3}>Called when the open transition finishes and the panel is visible.</td>
-          </tr>
-          <tr>
-            <th>onClosed</th>
-            <td colSpan={3}>Called when the close transition finishes and the panel is hidden.</td>
-          </tr>
-          <tr>
-            <th>onOpenChange</th>
-            <td colSpan={3}>Called when the open state should change (e.g. user closes via overlay or close button). Pass the new boolean value to update controlled state.</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className="table-container">
+        <table className="table is-bordered is-striped is-narrow is-fullwidth">
+          <tbody>
+            <tr>
+              <th>onOpened</th>
+              <td colSpan={3}>Called when the open transition finishes and the panel is visible.</td>
+            </tr>
+            <tr>
+              <th>onClosed</th>
+              <td colSpan={3}>Called when the close transition finishes and the panel is hidden.</td>
+            </tr>
+            <tr>
+              <th>onOpenChange</th>
+              <td colSpan={3}>Called when the open state should change (e.g. user closes via overlay or close button). Pass the new boolean value to update controlled state.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </>
   );
 }

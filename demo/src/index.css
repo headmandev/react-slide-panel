@@ -17,15 +17,15 @@ body {
 }
 
 /* Hero layout (from v3sp-example) */
-.hero {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%);
+.hero.is-danger {
+  color: #fff;
+  background-color: #631db8;
+}
+
+.hero.is-danger .title, .hero.is-danger .subtitle {
   color: #fff;
 }
 
-.hero-head {
-  padding: 0.75rem 0;
-}
 
 .navbar {
   padding: 0 1rem;
@@ -52,67 +52,20 @@ body {
   display: inline-block;
 }
 
-.hero-body {
-  padding: 2rem 1rem 4rem;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.columns {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
-  align-items: start;
-}
-
-@media (max-width: 900px) {
-  .columns {
-    grid-template-columns: 1fr;
-  }
-}
-
-.column-left {
-  position: relative;
-}
-
-.column-right {
-  min-width: 0;
-}
-
 @media (min-width: 1216px) {
-  .fixed-block {
-    position: sticky;
-    top: 1rem;
+  .fixed {
+      position:fixed!important
   }
 }
 
-.hero-title {
-  margin: 0 0 0.5rem;
-  font-size: 1.75rem;
-  font-weight: 700;
-}
 
-.hero-subtitle {
-  margin: 0 0 1.25rem;
-  opacity: 0.95;
-  line-height: 1.5;
-}
 
-.install-cmd {
-  display: inline-block;
-  padding: 0.5rem 0.75rem;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  font-family: ui-monospace, monospace;
-  font-size: 0.9rem;
-}
 
-.editor-wrap {
-  margin-top: 1.25rem;
-}
+
+
+
+
+
 
 /* Code block (Prism) */
 .code-block-wrap {
@@ -260,56 +213,7 @@ body {
   background: #334155;
 }
 
-/* Documentation table */
-.table-wrap {
-  overflow-x: auto;
-  margin-bottom: 1rem;
-}
 
-.doc-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9rem;
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.doc-table th,
-.doc-table td {
-  padding: 0.5rem 0.75rem;
-  text-align: left;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.doc-table th {
-  width: 140px;
-  font-weight: 600;
-  background: #f9fafb;
-  color: #111;
-}
-
-.doc-table td:nth-child(2) {
-  width: 80px;
-  color: #6b7280;
-}
-
-.doc-table td:nth-child(3) {
-  width: 180px;
-  font-size: 0.85rem;
-}
-
-.doc-table tbody tr:last-child th,
-.doc-table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-@media (max-width: 600px) {
-  .doc-table {
-    font-size: 10px;
-  }
-}
 
 .github-link {
   margin-top: 1.5rem;

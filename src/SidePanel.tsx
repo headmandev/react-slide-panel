@@ -14,36 +14,68 @@ import './styles.css';
 export type SidePanelSide = 'top' | 'right' | 'bottom' | 'left';
 
 export interface SidePanelProps {
+  /** Whether the panel is open. */
   open: boolean;
+  /** Callback when open state should change (e.g. user closes). Pass the new boolean to update controlled state. */
   onOpenChange: (open: boolean) => void;
+  /** Called when the close transition finishes and the panel is hidden. */
   onClosed?: () => void;
+  /** Called when the open transition finishes and the panel is visible. */
   onOpened?: () => void;
+  /** ID of the portal container element. Default: `'rsp-container'`. */
   idName?: string;
+  /** Hide the default close button. */
   hideCloseBtn?: boolean;
+  /** Disable closing by clicking the overlay. */
   noClose?: boolean;
+  /** Which side the panel slides from. Default: `'right'`. */
   side?: SidePanelSide;
+  /** When true, unmount panel when closed and remount when opened. Default: `true`. */
   rerender?: boolean;
+  /** z-index of overlay and panel. `'auto'` uses a high default. */
   zIndex?: number | 'auto';
+  /** Panel width (e.g. `'500px'`). Only for side `'left'` or `'right'`. */
   width?: string;
+  /** Panel height (e.g. `'500px'`). Only for side `'top'` or `'bottom'`. */
   height?: string;
+  /** Lock body scroll when the panel is open. */
   lockScroll?: boolean;
+  /** When lockScroll is true, also set overflow hidden on html. Default: `true`. */
   lockScrollHtml?: boolean;
+  /** Overlay background color (any valid CSS color). Default: `'black'`. */
   overlayColor?: string;
+  /** Overlay opacity (0–1). Default: `0.5`. */
   overlayOpacity?: number;
+  /** Overlay transition duration in ms. Default: `500`. */
   overlayDuration?: number;
+  /** Panel background color. Default: `'white'`. */
   panelColor?: string;
+  /** Panel transition duration in ms. Default: `300`. */
   panelDuration?: number;
+  /** Animation class name: `slide-right` | `slide-left` | `slide-top` | `slide-bottom`, or custom. Default picks from `side`. */
   transitionName?: string;
+  /** Class for the header container. */
   headerClass?: string;
+  /** Class for the scrollable body container. */
   bodyClass?: string;
+  /** Class for the footer container. */
   footerClass?: string;
+  /** Optional fixed header content. */
   header?: React.ReactNode;
+  /** Optional fixed footer content. */
   footer?: React.ReactNode;
+  /** Panel body content. */
   children?: React.ReactNode;
+  /** Additional class for the panel element. */
   className?: string;
+  /** Inline styles for the panel element. */
   style?: React.CSSProperties;
 }
 
+/**
+ * A modal side panel that slides in from the chosen edge (top, right, bottom, left).
+ * Renders via a portal and supports overlay, scroll lock, and custom header/footer.
+ */
 export function SidePanel({
   open,
   onOpenChange,
@@ -155,8 +187,6 @@ export function SidePanel({
 
     return () => {
       if (shouldLock && el) {
-        // body-scroll-lock library natively handles arrays of locked elements, 
-        // so calling enable here safely peels back just one layer.
         enableBodyScroll(el);
         
         // Only restore the manual HTML overflow if *we* were the ones who hid it
