@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import { SidePanel } from 'react-side-panel';
 import { CodeBlock } from './CodeBlock';
 
@@ -28,9 +28,17 @@ const initialForm: FormState = {
   panelDuration: 300,
 };
 
+const sideRadioName = (() => {
+  let n = 0;
+  return () => `panel-side-${(n++).toString()}`;
+})();
+
 export function Options() {
   const [isOpened, setIsOpened] = useState(false);
   const [form, setForm] = useState<FormState>(initialForm);
+  const nameRef = useRef<string | null>(null);
+  if (nameRef.current === null) nameRef.current = sideRadioName();
+  const radioName = nameRef.current;
 
   const updateForm = <K extends keyof FormState>(key: K, value: FormState[K]) => {
     setForm((f) => ({ ...f, [key]: value }));
@@ -130,7 +138,7 @@ export default function App() {
           <label className="radio-label">
             <input
               type="radio"
-              name="side"
+              name={radioName}
               value="right"
               checked={form.side === 'right'}
               onChange={() => updateForm('side', 'right')}
@@ -140,7 +148,7 @@ export default function App() {
           <label className="radio-label">
             <input
               type="radio"
-              name="side"
+              name={radioName}
               value="left"
               checked={form.side === 'left'}
               onChange={() => updateForm('side', 'left')}
@@ -150,7 +158,7 @@ export default function App() {
           <label className="radio-label">
             <input
               type="radio"
-              name="side"
+              name={radioName}
               value="top"
               checked={form.side === 'top'}
               onChange={() => updateForm('side', 'top')}
@@ -160,7 +168,7 @@ export default function App() {
           <label className="radio-label">
             <input
               type="radio"
-              name="side"
+              name={radioName}
               value="bottom"
               checked={form.side === 'bottom'}
               onChange={() => updateForm('side', 'bottom')}

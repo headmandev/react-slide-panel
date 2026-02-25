@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import 'bulma/css/bulma.css'
+import 'bulma/css/bulma.css';
 import 'prismjs/themes/prism-tomorrow.css';
-// Library styles (relative path for demo; in your app use 'react-side-panel/dist/styles.css')
 import '../../src/styles.css';
 import './index.css';
 

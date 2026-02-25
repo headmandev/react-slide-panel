@@ -50,110 +50,114 @@
   position: relative;
 }
 
-/* Overlay transition */
-.rsp-wrapper .overlay-enter-active,
-.rsp-wrapper .overlay-leave-active {
-  animation: rsp-overlay-transition forwards;
+/* =========================================
+   OVERLAY ANIMATIONS
+   ========================================= */
+.rsp-wrapper .overlay-enter-active {
+  animation: rsp-overlay-in forwards;
 }
 
 .rsp-wrapper .overlay-leave-active {
-  animation-direction: reverse;
+  animation: rsp-overlay-out forwards;
 }
 
-/* Slide right */
-.rsp-wrapper .slide-right-enter-active,
+@keyframes rsp-overlay-in {
+  0% { opacity: 0; }
+  100% { opacity: var(--overlay-opacity, 0.5); }
+}
+
+@keyframes rsp-overlay-out {
+  0% { opacity: var(--overlay-opacity, 0.5); }
+  100% { opacity: 0; }
+}
+
+/* =========================================
+   SLIDE RIGHT
+   ========================================= */
+.rsp-wrapper .slide-right-enter-active {
+  animation: rsp-slide-right-in forwards;
+}
+
 .rsp-wrapper .slide-right-leave-active {
-  animation: rsp-slide-right forwards;
+  animation: rsp-slide-right-out forwards;
 }
 
-.rsp-wrapper .slide-right-leave-active {
-  animation-direction: reverse;
+@keyframes rsp-slide-right-in {
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
 }
 
-/* Slide left */
-.rsp-wrapper .slide-left-enter-active,
+@keyframes rsp-slide-right-out {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+/* =========================================
+   SLIDE LEFT
+   ========================================= */
+.rsp-wrapper .slide-left-enter-active {
+  animation: rsp-slide-left-in forwards;
+}
+
 .rsp-wrapper .slide-left-leave-active {
-  animation: rsp-slide-left forwards;
+  animation: rsp-slide-left-out forwards;
 }
 
-.rsp-wrapper .slide-left-leave-active {
-  animation-direction: reverse;
+@keyframes rsp-slide-left-in {
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
 }
 
-/* Slide top */
-.rsp-wrapper .slide-top-enter-active,
+@keyframes rsp-slide-left-out {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(-100%); opacity: 0; }
+}
+
+/* =========================================
+   SLIDE TOP
+   ========================================= */
+.rsp-wrapper .slide-top-enter-active {
+  animation: rsp-slide-top-in forwards;
+}
+
 .rsp-wrapper .slide-top-leave-active {
-  animation: rsp-slide-top forwards;
+  animation: rsp-slide-top-out forwards;
 }
 
-.rsp-wrapper .slide-top-leave-active {
-  animation-direction: reverse;
+@keyframes rsp-slide-top-in {
+  0% { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
 
-/* Slide bottom */
-.rsp-wrapper .slide-bottom-enter-active,
+@keyframes rsp-slide-top-out {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100%); opacity: 0; }
+}
+
+/* =========================================
+   SLIDE BOTTOM
+   ========================================= */
+.rsp-wrapper .slide-bottom-enter-active {
+  animation: rsp-slide-bottom-in forwards;
+}
+
 .rsp-wrapper .slide-bottom-leave-active {
-  animation: rsp-slide-bottom forwards;
+  animation: rsp-slide-bottom-out forwards;
 }
 
-.rsp-wrapper .slide-bottom-leave-active {
-  animation-direction: reverse;
+@keyframes rsp-slide-bottom-in {
+  0% { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
 
-@keyframes rsp-slide-right {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+@keyframes rsp-slide-bottom-out {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
 }
 
-@keyframes rsp-slide-left {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes rsp-slide-bottom {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes rsp-slide-top {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes rsp-overlay-transition {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: var(--overlay-opacity, 0.5);
-  }
-}
-
-/* Close button */
+/* =========================================
+   CLOSE BUTTON
+   ========================================= */
 .rsp-close {
   position: absolute;
   top: 24px;
