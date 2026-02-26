@@ -20,7 +20,8 @@
     "build": "tsup && cp src/styles.css dist/",
     "dev": "tsup --watch",
     "lint": "eslint src --ext .ts,.tsx",
-    "demo": "cd demo && npm install && npm run dev"
+    "demo": "cd demo && npm install && npm run dev",
+    "build:demo": "npm run build && cd demo && npm install && npm run build"
   },
   "keywords": [
     "react",
