@@ -167,7 +167,7 @@ export function SlidePanel({
 
   useEffect(() => {
     const el = panelRef.current;
-    const shouldLock = open && lockScroll && el;
+    const shouldLock = isMounted && lockScroll && el;
 
     if (shouldLock) {
       // Record the exact state of the page *before* we apply our locks
@@ -199,7 +199,7 @@ export function SlidePanel({
         }
       }
     };
-  }, [open, lockScroll, lockScrollHtml]);
+  }, [isMounted, lockScroll, lockScrollHtml]);
 
   const closePanel = useCallback(() => {
     onOpenChange(false);

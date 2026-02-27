@@ -1,6 +1,6 @@
 {
   "name": "react-slide-panel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Easy to use and flexible modal drawer/sidebar component for React (TypeScript)",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
