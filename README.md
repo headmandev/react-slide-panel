@@ -4,6 +4,8 @@ A React component that renders a **slide-out drawer** (or sidebar panel) from an
 
 <img src="https://github.com/user-attachments/assets/2dda5132-bd76-4de4-901d-0f0488563d0a" width="75%" />
 
+[Demo and Documentation](https://react-slide-panel.netlify.app)
+
 ## Install
 
 ```bash
