@@ -1,5 +1,5 @@
 {
-  "name": "react-side-drawer",
+  "name": "react-slide-drawer",
   "version": "1.0.0",
   "description": "Easy to use and flexible modal drawer/sidebar component for React (TypeScript)",
   "main": "dist/index.js",
@@ -28,7 +28,7 @@
     "modal",
     "sidebar",
     "panel",
-    "side-drawer",
+    "slide-drawer",
     "drawer"
   ],
   "author": "headmandev",

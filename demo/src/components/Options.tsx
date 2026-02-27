@@ -1,5 +1,5 @@
 import { useState, useMemo, useRef } from 'react';
-import { SidePanel } from 'react-side-drawer';
+import { SidePanel } from 'react-slide-drawer';
 import { CodeBlock } from './CodeBlock';
 
 type Side = 'right' | 'left' | 'top' | 'bottom';
@@ -114,7 +114,7 @@ export function Options() {
   const componentCodeExample = useMemo(
     () => `// BASIC EXAMPLE
 import { useState } from 'react';
-import { SidePanel } from 'react-side-drawer';
+import { SidePanel } from 'react-slide-drawer';
 
 export default function App() {
   const [open, setOpen] = useState(false);

@@ -1,15 +1,15 @@
-# react-side-drawer
+# react-slide-drawer
 
 A React component that renders a **slide-out drawer** (or sidebar panel) from any edge of the screen—right, left, top, or bottom. It uses a modal overlay, optional scroll lock, and supports header, body, and footer slots. Written in TypeScript. Port of [vue3-side-panel](https://github.com/headmandev/vue3-side-panel).
 
 ## Install
 
 ```bash
-npm install react-side-drawer
+npm install react-slide-drawer
 # or
-yarn add react-side-drawer
+yarn add react-slide-drawer
 # or
-pnpm add react-side-drawer
+pnpm add react-slide-drawer
 ```
 
 **Peer dependencies:** `react` and `react-dom` (>= 16.8.0).
@@ -19,8 +19,8 @@ pnpm add react-side-drawer
 Import the component and the default styles:
 
 ```tsx
-import { SidePanel } from 'react-side-drawer';
-import 'react-side-drawer/dist/styles.css';
+import { SidePanel } from 'react-slide-drawer';
+import 'react-slide-drawer/dist/styles.css';
 
 function App() {
   const [open, setOpen] = useState(false);
