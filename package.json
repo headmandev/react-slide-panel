@@ -31,6 +31,10 @@
     "slide-panel",
     "drawer"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/headmandev/react-slide-panel"
+  },
   "author": "headmandev",
   "license": "MIT",
   "peerDependencies": {
