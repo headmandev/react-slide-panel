@@ -2,6 +2,8 @@
 
 A React component that renders a **slide-out drawer** (or sidebar panel) from any edge of the screen—right, left, top, or bottom. It uses a modal overlay, optional scroll lock, and supports header, body, and footer slots. Written in TypeScript. Port of [vue3-side-panel](https://github.com/headmandev/vue3-side-panel).
 
+<img src="https://github.com/user-attachments/assets/2dda5132-bd76-4de4-901d-0f0488563d0a" width="75%" />
+
 ## Install
 
 ```bash
