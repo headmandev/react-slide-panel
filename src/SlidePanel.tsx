@@ -8,12 +8,12 @@ import React, {
 } from 'react';
 import { createPortal } from 'react-dom';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-import { SidePanelCloseButton } from './SidePanelCloseButton';
+import { SidePanelCloseButton } from './SlidePanelCloseButton';
 import './styles.css';
 
-export type SidePanelSide = 'top' | 'right' | 'bottom' | 'left';
+export type SlidePanelSide = 'top' | 'right' | 'bottom' | 'left';
 
-export interface SidePanelProps {
+export interface SlidePanelProps {
   /** Whether the panel is open. */
   open: boolean;
   /** Callback when open state should change (e.g. user closes). Pass the new boolean to update controlled state. */
@@ -29,7 +29,7 @@ export interface SidePanelProps {
   /** Disable closing by clicking the overlay. */
   noClose?: boolean;
   /** Which side the panel slides from. Default: `'right'`. */
-  side?: SidePanelSide;
+  side?: SlidePanelSide;
   /** When true, unmount panel when closed and remount when opened. Default: `true`. */
   rerender?: boolean;
   /** z-index of overlay and panel. `'auto'` uses a high default. */
@@ -73,10 +73,10 @@ export interface SidePanelProps {
 }
 
 /**
- * A modal side panel that slides in from the chosen edge (top, right, bottom, left).
+ * A modal slide panel that slides in from the chosen edge (top, right, bottom, left).
  * Renders via a portal and supports overlay, scroll lock, and custom header/footer.
  */
-export function SidePanel({
+export function SlidePanel({
   open,
   onOpenChange,
   onClosed,
@@ -105,7 +105,7 @@ export function SidePanel({
   children,
   className = '',
   style: styleProp,
-}: SidePanelProps) {
+}: SlidePanelProps) {
   const [isMounted, setIsMounted] = useState(open);
   const [isExiting, setIsExiting] = useState(false);
   const [portalContainer, setPortalContainer] = useState<HTMLElement | null>(null);
@@ -292,4 +292,4 @@ export function SidePanel({
   return createPortal(content, portalContainer);
 }
 
-SidePanel.displayName = 'SidePanel';
+SlidePanel.displayName = 'SlidePanel';

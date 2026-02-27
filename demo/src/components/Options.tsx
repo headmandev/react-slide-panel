@@ -1,5 +1,5 @@
 import { useState, useMemo, useRef } from 'react';
-import { SidePanel } from 'react-slide-drawer';
+import { SlidePanel } from 'react-slide-panel';
 import { CodeBlock } from './CodeBlock';
 
 type Side = 'right' | 'left' | 'top' | 'bottom';
@@ -94,7 +94,7 @@ export function Options() {
             </h2>
           ))}
         </div>
-      </SidePanel>`,
+      </SlidePanel>`,
     []
   );
 
@@ -114,14 +114,14 @@ export function Options() {
   const componentCodeExample = useMemo(
     () => `// BASIC EXAMPLE
 import { useState } from 'react';
-import { SidePanel } from 'react-slide-drawer';
+import { SlidePanel } from 'react-slide-panel';
 
 export default function App() {
   const [open, setOpen] = useState(false);
   return (
     <>
       <button onClick={() => setOpen(true)}>Open</button>
-      <SidePanel
+      <SlidePanel
         open={open}
         onOpenChange={setOpen}${stringOptions}${headerCode}${fixedFooterCode}${bodyCode}
     </>
@@ -130,7 +130,7 @@ export default function App() {
     [stringOptions, headerCode, fixedFooterCode, bodyCode]
   );
 
-  const exampleCloseButtonCode = `<SidePanel
+  const exampleCloseButtonCode = `<SlidePanel
   open={open}
   onOpenChange={setOpen}
   hideCloseBtn
@@ -139,7 +139,7 @@ export default function App() {
   }
 >
   ...
-</SidePanel>`;
+</SlidePanel>`;
 
   return (
     <>
@@ -297,7 +297,7 @@ export default function App() {
         CHECK IT OUT
       </button>
 
-      <SidePanel
+      <SlidePanel
         open={isOpened}
         onOpenChange={setIsOpened}
         onOpened={() => console.log('onOpened: transition stopped and modal is opened')}
@@ -381,7 +381,7 @@ export default function App() {
             </h2>
           ))}
         </div>
-      </SidePanel>
+      </SlidePanel>
 
       <div className="code-block-wrap">
         <CodeBlock code={componentCodeExample} />

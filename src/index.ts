@@ -1,4 +1,4 @@
-export { SidePanel } from './SidePanel';
-export type { SidePanelProps, SidePanelSide } from './SidePanel';
-export { SidePanelCloseButton } from './SidePanelCloseButton';
-export type { SidePanelCloseButtonProps } from './SidePanelCloseButton';
+export { SlidePanel } from './SlidePanel';
+export type { SlidePanelProps, SlidePanelSide } from './SlidePanel';
+export { SidePanelCloseButton } from './SlidePanelCloseButton';
+export type { SidePanelCloseButtonProps } from './SlidePanelCloseButton';

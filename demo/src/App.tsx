@@ -10,7 +10,7 @@ import { PropertyDocumentation } from './components/PropertyDocumentation';
             <div className="navbar-brand">
               <a
                 className="navbar-item fixed"
-                href="https://github.com/headmandev/react-slide-drawer"
+                href="https://github.com/headmandev/react-slide-panel"
                 target="_blank"
               >
                 <svg className="icon" viewBox="0 0 16 16" width="24" height="24" fill="white" aria-hidden>
@@ -26,20 +26,20 @@ import { PropertyDocumentation } from './components/PropertyDocumentation';
           <div className="columns">
             <div className="column">
               <div className="fixed">
-                <h1 className="title mb-2">react-slide-drawer</h1>
+                <h1 className="title mb-2">react-slide-panel</h1>
                 <p className="subtitle">
                 🔥 Easy to use and flexible
                   <br />
                   screen-side modal component
                 </p>
-                <code className="language-html p-2">npm i react-slide-drawer</code>
+                <code className="language-html p-2">npm i react-slide-panel</code>
               </div>
             </div>
             <div className="column is-three-quarters">
               <Options />
               <PropertyDocumentation />
               <p className="github-link">
-                <a href="https://github.com/headmandev/react-slide-drawer" target="_blank" rel="noreferrer">
+                <a href="https://github.com/headmandev/react-slide-panel" target="_blank" rel="noreferrer">
                   👉 Github
                 </a>
               </p>

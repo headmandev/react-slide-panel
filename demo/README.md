@@ -1,6 +1,6 @@
 # Demo
 
-Local dev app for **react-slide-drawer**. Use it to debug the component before publishing.
+Local dev app for **react-slide-panel**. Use it to debug the component before publishing.
 
 ## Run
 
